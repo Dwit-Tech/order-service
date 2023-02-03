@@ -18,7 +18,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddDatabaseService(this IServiceCollection service, IConfiguration configuration)
         {
 
-            string connectionString = configuration.GetConnectionString("DefaultDbContext");
+            string connectionString = configuration.GetConnectionString("OrderDbContext");
             connectionString = connectionString.Replace("{DBHost}", configuration["DB_HOSTNAME"]);
             connectionString = connectionString.Replace("{DBName}", configuration["DB_NAME"]);
             connectionString = connectionString.Replace("{DBUser}", configuration["DB_USERNAME"]);
