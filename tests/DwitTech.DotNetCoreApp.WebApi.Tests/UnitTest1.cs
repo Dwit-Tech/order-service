@@ -1,4 +1,4 @@
-namespace DwitTech.DotNetCoreApp.WebApi.Tests
+namespace DwitTech.OrderService.WebApi.Tests
 {
     public class UnitTest1
     {

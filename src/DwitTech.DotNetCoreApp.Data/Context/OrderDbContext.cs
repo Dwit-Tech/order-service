@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace DwitTech.DotNetCoreApp.Data.Context
+namespace DwitTech.OrderService.Data.Context
 {
-    public class DefaultDbContext : DbContext
+    public class OrderDbContext : DbContext
     {
-        public DefaultDbContext(DbContextOptions options) : base(options)
+        public OrderDbContext(DbContextOptions options) : base(options)
         {
         }
 

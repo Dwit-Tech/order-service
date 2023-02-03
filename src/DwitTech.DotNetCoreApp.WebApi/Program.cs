@@ -1,6 +1,7 @@
+using Microsoft.Extensions.DependencyInjection;
 using System.Text.Json.Serialization;
 
-namespace DwitTech.DotNetCoreApp.WebApi
+namespace DwitTech.OrderService.WebApi
 {
     public class Program
     {
