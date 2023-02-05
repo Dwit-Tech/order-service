@@ -1,4 +1,4 @@
-name: Trigger auto deployment for dotnetcore-api-app-2023013012295
+name: Trigger auto deployment for dwittechorderservicewebapi-app
 
 # When this action will be executed
 on:
@@ -8,7 +8,7 @@ on:
       [ master ]
     paths:
     - '**'
-    - '.github/workflows/dotnetcore-api-app-2023013012295-AutoDeployTrigger-d35c3221-6f0c-4747-bfe5-d137581a6f9f.yml'
+    - '.github/workflows/dwittechorderservicewebapi-app-AutoDeployTrigger-d35c3221-6f0c-4747-bfe5-d137581a6f9f.yml'
 
   # Allow mannually trigger 
   workflow_dispatch:      
@@ -28,14 +28,14 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: dotnetcoreapi20230130123723.azurecr.io
-          username: ${{ secrets.DOTNETCOREAPIAPP2023013012295_REGISTRY_USERNAME }}
-          password: ${{ secrets.DOTNETCOREAPIAPP2023013012295_REGISTRY_PASSWORD }}
+          username: ${{ secrets.DWITTECHORDERSERVICEWEBAPIAPP_REGISTRY_USERNAME }}
+          password: ${{ secrets.DWITTECHORDERSERVICEWEBAPIAPP_REGISTRY_PASSWORD }}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: dotnetcoreapi20230130123723.azurecr.io/dotnetcore-api-app-2023013012295:${{ github.sha }}
+          tags: dotnetcoreapi20230130123723.azurecr.io/dwittechorderservicewebapi-app:${{ github.sha }}
           file: ./Dockerfile
           context: ./
 
@@ -48,7 +48,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.DOTNETCOREAPIAPP2023013012295_AZURE_CREDENTIALS }}
+          creds: ${{ secrets.DWITTECHORDERSERVICEWEBAPIAPP_AZURE_CREDENTIALS }}
 
 
       - name: Deploy to containerapp
@@ -56,5 +56,5 @@ jobs:
         with:
           inlineScript: |
             az config set extension.use_dynamic_install=yes_without_prompt
-            az containerapp registry set -n dotnetcore-api-app-2023013012295 -g dwit-tech --server dotnetcoreapi20230130123723.azurecr.io --username  ${{ secrets.DOTNETCOREAPIAPP2023013012295_REGISTRY_USERNAME }} --password ${{ secrets.DOTNETCOREAPIAPP2023013012295_REGISTRY_PASSWORD }}
-            az containerapp update -n dotnetcore-api-app-2023013012295 -g dwit-tech --image dotnetcoreapi20230130123723.azurecr.io/dotnetcore-api-app-2023013012295:${{ github.sha }}
+            az containerapp registry set -n dwittechorderservicewebapi-app -g dwit-tech --server dotnetcoreapi20230130123723.azurecr.io --username  ${{ secrets.DWITTECHORDERSERVICEWEBAPIAPP_REGISTRY_USERNAME }} --password ${{ secrets.DWITTECHORDERSERVICEWEBAPIAPP_REGISTRY_PASSWORD }}
+            az containerapp update -n dwittechorderservicewebapi-app -g dwit-tech --image dotnetcoreapi20230130123723.azurecr.io/dwittechorderservicewebapi-app:${{ github.sha }}
