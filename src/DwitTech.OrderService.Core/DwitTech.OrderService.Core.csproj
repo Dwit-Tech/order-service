@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DwitTech.DotNetCoreApp.Data\DwitTech.OrderService.Data.csproj" />
+    <ProjectReference Include="..\DwitTech.OrderService.Data\DwitTech.OrderService.Data.csproj" />
   </ItemGroup>
 
 </Project>

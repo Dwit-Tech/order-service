@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DwitTech.DotNetCoreApp.WebApi\DwitTech.OrderService.WebApi.csproj" />
+    <ProjectReference Include="..\..\src\DwitTech.OrderService.WebApi\DwitTech.OrderService.WebApi.csproj" />
   </ItemGroup>
 
 </Project>
