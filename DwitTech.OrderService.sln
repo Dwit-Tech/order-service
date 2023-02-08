@@ -20,6 +20,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwitTech.OrderService.Data.Tests", "tests\DwitTech.OrderService.Data.Tests\DwitTech.OrderService.Data.Tests.csproj", "{D3CA6EB7-DD9A-4051-91C7-4EDB42AB5E87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{CB78509F-6DEE-444F-A377-5034A23D9F61}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dwittechorderservicewebapi-app-AutoDeployTrigger-9f89f0f5-2216-436f-a4e1-c8c75fc88021.yml = .github\workflows\dwittechorderservicewebapi-app-AutoDeployTrigger-9f89f0f5-2216-436f-a4e1-c8c75fc88021.yml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2CD127B7-8FA1-4D44-847B-D86EA93801F8}"
 	ProjectSection(SolutionItems) = preProject
